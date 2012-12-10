@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         jshint: {
-            files: [
+            all: [
                 'gruntfile.js',
                 'public/js/src/**/*.js',
                 'public/js/tests/specs/**/*.js'
@@ -78,6 +78,15 @@ module.exports = function(grunt) {
                     insertRequire: ['main']
                 }
             }
+        },
+        watch: {
+            all: {
+                files: ['<%= jshint.all %>'],
+                tasks: ['jshint'],
+                options: {
+                    interrupt: true
+                }
+            }
         }
     });
 
@@ -86,8 +95,20 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['jshint', 'less:development', 'connect:test', 'jasmine:requirejs']);
+    grunt.registerTask('default', [
+        'jshint',
+        'less:development',
+        'connect:test',
+        'jasmine:requirejs'
+    ]);
     grunt.registerTask('dev', ['default']);
-    grunt.registerTask('prod', ['jshint', 'less:production', 'requirejs']);
+    grunt.registerTask('prod', [
+        'jshint',
+        'less:production',
+        'connect:test',
+        'jasmine:requirejs',
+        'requirejs'
+    ]);
 };
