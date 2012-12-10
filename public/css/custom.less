@@ -1,0 +1,78 @@
+@import "bootstrap/bootstrap.less";
+@import "kendoui/kendo.common.less";
+@import "kendoui/kendo.default.less";
+@import "custom/components.less";
+@import "bootstrap/wells.less";
+//@import "kendoui/kendo.metro.less";
+
+body {
+  padding-top: 50px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+
+@plugin-height: 570px;
+
+.plugin-container {
+  height: @plugin-height;
+  margin-bottom: 10px;
+
+  .k-splitter {
+    height: 100%;
+  }
+
+  > .nav-container {
+    height: @plugin-height;
+    background-color: @wellBackground;
+    overflow: auto;
+  }
+
+  > .form-container {
+    > .form-panels {
+      > .plugin-form-panel {
+        background-color: @wellBackground;
+      }
+    }
+  }
+}
+
+.plugin-view {
+  
+  button {
+    .pull-right;
+  }
+}
+
+// kendo overrides
+.k-tabstrip {
+  #main-view-tab-strip-nav {
+    &.k-tabstrip-items {
+      padding: 0 0.3em 0.3em;
+
+      .k-item {
+        border-width: 0 1px 1px;
+         -webkit-border-radius: 0 0 4px 4px;
+         border-radius: 0 0 4px 4px;
+      }
+
+      .k-tab-on-top {
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        margin-top: -1px;
+        padding-top: 1px;
+      }
+    }
+  }     
+  .k-content {
+    padding: .3em .92em 3em;
+  }
+}
+
+#main-view-tab-strip {
+  .plugin-view {
+    min-height: @plugin-height;
+    margin: .3em .29em 0;
+  }
+}
+
+.main-viewport {
+}
+
