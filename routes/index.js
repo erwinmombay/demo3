@@ -7,336 +7,118 @@ exports.index = function(req, res) {
 };
 
 exports.field = function(req, res) {
-	res.send([{
-		"Id": 1,
-		"DisplayName": "BE Code",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 1,
-		"MaxSize": 20,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 2,
-		"DisplayName": "Name",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 1,
-		"MaxSize": 50,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 3,
-		"DisplayName": "Address 1",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 1,
-		"MaxSize": 50,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 4,
-		"DisplayName": "Address 2",
-		"Type": "string",
-		"ReqDes": "O",
-		"MinSize": 1,
-		"MaxSize": 50,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 5,
-		"DisplayName": "City",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 1,
-		"MaxSize": 50,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 6,
-		"DisplayName": "State/Province",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 1,
-		"MaxSize": 50,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 7,
-		"DisplayName": "Postal Code",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 3,
-		"MaxSize": 15,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 8,
-		"DisplayName": "Country",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 1,
-		"MaxSize": 50,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 9,
-		"DisplayName": "Primary Industry",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 1,
-		"MaxSize": 3,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 10,
-		"DisplayName": "ParentID",
-		"Type": "int",
-		"ReqDes": "0",
-		"MinSize": 0,
-		"MaxSize": 0,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 11,
-		"DisplayName": "Test Entity",
-		"Type": "bool",
-		"ReqDes": "M",
-		"MinSize": 0,
-		"MaxSize": 0,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 1,
-		"DisplayName": "BE Code",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 1,
-		"MaxSize": 20,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 2,
-		"DisplayName": "Name",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 1,
-		"MaxSize": 50,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 3,
-		"DisplayName": "Address 1",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 1,
-		"MaxSize": 50,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 4,
-		"DisplayName": "Address 2",
-		"Type": "string",
-		"ReqDes": "O",
-		"MinSize": 1,
-		"MaxSize": 50,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 5,
-		"DisplayName": "City",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 1,
-		"MaxSize": 50,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 6,
-		"DisplayName": "State/Province",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 1,
-		"MaxSize": 50,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 7,
-		"DisplayName": "Postal Code",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 3,
-		"MaxSize": 15,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 8,
-		"DisplayName": "Country",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 1,
-		"MaxSize": 50,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 9,
-		"DisplayName": "Primary Industry",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 1,
-		"MaxSize": 3,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 10,
-		"DisplayName": "ParentID",
-		"Type": "int",
-		"ReqDes": "0",
-		"MinSize": 0,
-		"MaxSize": 0,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 11,
-		"DisplayName": "Test Entity",
-		"Type": "bool",
-		"ReqDes": "M",
-		"MinSize": 0,
-		"MaxSize": 0,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 1,
-		"DisplayName": "BE Code",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 1,
-		"MaxSize": 20,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 2,
-		"DisplayName": "Name",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 1,
-		"MaxSize": 50,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 3,
-		"DisplayName": "Address 1",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 1,
-		"MaxSize": 50,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 4,
-		"DisplayName": "Address 2",
-		"Type": "string",
-		"ReqDes": "O",
-		"MinSize": 1,
-		"MaxSize": 50,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 5,
-		"DisplayName": "City",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 1,
-		"MaxSize": 50,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 6,
-		"DisplayName": "State/Province",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 1,
-		"MaxSize": 50,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 7,
-		"DisplayName": "Postal Code",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 3,
-		"MaxSize": 15,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 8,
-		"DisplayName": "Country",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 1,
-		"MaxSize": 50,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 9,
-		"DisplayName": "Primary Industry",
-		"Type": "string",
-		"ReqDes": "M",
-		"MinSize": 1,
-		"MaxSize": 3,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 10,
-		"DisplayName": "ParentID",
-		"Type": "int",
-		"ReqDes": "0",
-		"MinSize": 0,
-		"MaxSize": 0,
-		"Mask": "",
-		"ValidationCodes": []
-	},
-	{
-		"Id": 11,
-		"DisplayName": "Test Entity",
-		"Type": "bool",
-		"ReqDes": "M",
-		"MinSize": 0,
-		"MaxSize": 0,
-		"Mask": "",
-		"ValidationCodes": []
-	}]);
+	res.send([
+        {
+            "Id": 1,
+            "DisplayName": "BE Code",
+            "Type": "string",
+            "ReqDes": "M",
+            "MinSize": 1,
+            "MaxSize": 20,
+            "Mask": "",
+            "ValidationCodes": []
+        },
+        {
+            "Id": 2,
+            "DisplayName": "Name",
+            "Type": "string",
+            "ReqDes": "M",
+            "MinSize": 1,
+            "MaxSize": 50,
+            "Mask": "",
+            "ValidationCodes": []
+        },
+        {
+            "Id": 3,
+            "DisplayName": "Address 1",
+            "Type": "string",
+            "ReqDes": "M",
+            "MinSize": 1,
+            "MaxSize": 50,
+            "Mask": "",
+            "ValidationCodes": []
+        },
+        {
+            "Id": 4,
+            "DisplayName": "Address 2",
+            "Type": "string",
+            "ReqDes": "O",
+            "MinSize": 1,
+            "MaxSize": 50,
+            "Mask": "",
+            "ValidationCodes": []
+        },
+        {
+            "Id": 5,
+            "DisplayName": "City",
+            "Type": "string",
+            "ReqDes": "M",
+            "MinSize": 1,
+            "MaxSize": 50,
+            "Mask": "",
+            "ValidationCodes": []
+        },
+        {
+            "Id": 6,
+            "DisplayName": "State/Province",
+            "Type": "string",
+            "ReqDes": "M",
+            "MinSize": 1,
+            "MaxSize": 50,
+            "Mask": "",
+            "ValidationCodes": []
+        },
+        {
+            "Id": 7,
+            "DisplayName": "Postal Code",
+            "Type": "string",
+            "ReqDes": "M",
+            "MinSize": 3,
+            "MaxSize": 15,
+            "Mask": "",
+            "ValidationCodes": []
+        },
+        {
+            "Id": 8,
+            "DisplayName": "Country",
+            "Type": "string",
+            "ReqDes": "M",
+            "MinSize": 1,
+            "MaxSize": 50,
+            "Mask": "",
+            "ValidationCodes": []
+        },
+        {
+            "Id": 9,
+            "DisplayName": "Primary Industry",
+            "Type": "string",
+            "ReqDes": "M",
+            "MinSize": 1,
+            "MaxSize": 3,
+            "Mask": "",
+            "ValidationCodes": []
+        },
+        {
+            "Id": 10,
+            "DisplayName": "ParentID",
+            "Type": "int",
+            "ReqDes": "0",
+            "MinSize": 0,
+            "MaxSize": 0,
+            "Mask": "",
+            "ValidationCodes": []
+        },
+        {
+            "Id": 11,
+            "DisplayName": "Test Entity",
+            "Type": "bool",
+            "ReqDes": "M",
+            "MinSize": 0,
+            "MaxSize": 0,
+            "Mask": "",
+            "ValidationCodes": []
+        }
+	]);
 };
 
 exports.document = function(req, res) {
