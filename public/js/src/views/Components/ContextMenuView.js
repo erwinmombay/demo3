@@ -2,9 +2,10 @@
     'use strict';
     var $ = require('jquery');
     var _ = require('underscore');
-    var Backbone = require('backbone');
 
-    var ContextMenuView = Backbone.View.extend({
+    var BaseView = require('views/BaseView');
+
+    var ContextMenuView = BaseView.extend({
 
         tagName: 'div',
 
@@ -18,18 +19,26 @@
 
         initialize: function(options) {
             _.bindAll(this, 'hide');
-            this._isVisible = false;
-            this.$window = $(window);
             $('body').append(this.$el);
-            $(document).on('click contextmenu', this.hide);
+            this._isVisible = false;
             this.options = null;
             this.$options = null;
+
+            this._bindHandlers();
         },
 
-        dispose: function() {
-            this.options = null;
-            Backbone.View.prototype.dispose.call(this);
+        _bindHandlers: function() {
+            $(document).on('click contextmenu', this.hide);
+        },
+
+        _unbindHandlers: function() {
             $(document).off('click contextmenu', this.hide);
+        },
+
+        remove: function() {
+            this.options = null;
+            this._unbindHandlers();
+            BaseView.prototype.remove.call(this);
         },
 
         render: function(spec) {
@@ -46,7 +55,7 @@
             });
             this.$options = $('<ul/>', { 'class': 'cmenu-options' });
             this.options = spec.options;
-            _.each(spec.options, this.createMenuListItems, this);
+            _.each(spec.options, this._createMenuListItems, this);
             this.$el.append(this.$options);
             this.$el.show();
             this._isVisible = true;
@@ -67,9 +76,9 @@
             this.options = null;
         },
 
-        createMenuListItems: function(value, key) {
+        _createMenuListItems: function(value, key) {
             var $listItem = $('<li/>');
-            var $link = $('<a/>', { id:_.uniqueId('ctx_option_'), 'text': key });
+            var $link = $('<a/>', { id: _.uniqueId('ctx_option_'), 'text': key });
             this.$options.append($listItem.append($link));
         }
     });
