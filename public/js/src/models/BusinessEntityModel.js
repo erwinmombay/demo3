@@ -4,6 +4,20 @@ define(function (require) {
     var BaseModel = require('models/BaseModel');
 
     var BusinessEntityModel = BaseModel.extend({
+        
+        defaults: {
+            code: '',
+            name: '',
+            address1: '',
+            address2: '',
+            city: '',
+            stateOrProvince: '',
+            postalCode: '',
+            country: '',
+            primaryIndustry: '',
+            parentID: '',
+            edictTestEntity: ''
+        },
 
         url: function() {
             return 'http://bcws-apent-t01/Edicttest/api/businessentity/' + this.id;
