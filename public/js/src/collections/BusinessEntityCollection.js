@@ -12,12 +12,12 @@ define(function (require) {
 
         url: 'api/businessentity/',
 
-        parse: function (response) {
+        parse: function(response) {
             var parsedModel;
             var parsedResponse = [];
             _.each(response, function(model) {
-                parsedModel = { id: model.ID };
-                _.each(model.Fields.FieldItems, function (fieldItems) {
+                parsedModel = {};
+                _.each(model.Fields.FieldItems, function(fieldItems) {
                     parsedModel[fieldItems.Name] = fieldItems.Value;
                 });
                 parsedResponse.push(parsedModel);

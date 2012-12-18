@@ -1,6 +1,7 @@
 require.config({
     paths: {
         jquery: '../libs/jquery/jquery',
+        xdomain: '../libs/jquery/jQuery.XDomainRequest',
         underscore: '../libs/underscore/underscore',
         backbone: '../libs/backbone/backbone',
         handlebars: '../libs/handlebars/handlebars.full',
@@ -12,7 +13,8 @@ require.config({
         routers: 'routers',
         utils: 'utils',
         kendo: '../libs/kendoui/kendo.web.min',
-        kendoBackbone: '../libs/backbone/kendo.backbone'
+        kendoBackbone: '../libs/backbone/kendo.backbone',
+        modalPlugin: '../libs/bootstrap/bootstrap-modal'
     },
     shim: {
         'backbone': {
@@ -29,6 +31,8 @@ require.config({
             exports: 'kendo'
         },
         'templates': ['handlebars'],
-        'kendoBackbone': ['kendo']
+        'kendoBackbone': ['kendo'],
+        'xdomain': ['jquery'],
+        'modalPlugin': ['jquery']
     }
 });

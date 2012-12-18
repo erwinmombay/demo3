@@ -1,41 +1,59 @@
-/**
- * mainView.js
- * ~~~~~~~~~~~~~~
- *
- * @author erwin.mombay
- */
-
 define(function(require) {
     'use strict';
     var $ = require('jquery');
     var Backbone = require('backbone');
+    var modalHelperTmpl = require('text!templates/Modal.html');
 
     var TableView = require('views/components/TableView');
+    var BusinessEntityModel = require('models/BusinessEntityModel');
     var BusinessEntityCollection = require('collections/BusinessEntityCollection');
     var FieldDescriptorCollection = require('collections/FieldDescriptorCollection');
+    var ModalView = require('views/ModalView');
 
     var MainView = Backbone.View.extend({
-        
-        events: {
 
+        events: {
+            'click #add-entity': '_addEntity',
+            'click #fetch-collection': '_fetchCollection',
+            'click #reset-collection': '_resetCollection'
+        },
+
+        initialize: function(options) {
+            $('body').append(modalHelperTmpl);
+            this.modalView = new ModalView({ el: $('#modal-helper') });
+            this.collection = new BusinessEntityCollection();
+            this.collection2 = new FieldDescriptorCollection();
+            window.modalView = this.modalView;
+            window.collection = this.collection;
+            window.collection2 = this.collection2;
         },
 
         render: function() {
-            var self = this;
-            var collection = new BusinessEntityCollection();
-            var collection2 = new FieldDescriptorCollection();
-            window.collection = collection;
-            window.collection2 = collection2;
+            var buttons = [
+                '<button id="add-entity" type="button" class="btn btn-primary">Add</button>',
+                '<button id="fetch-collection" type="button" class="btn">Fetch</button>',
+                '<button id="reset-collection" type="button" class="btn">Reset</button>'
+            ].join('');
+            this.$el.append(buttons);
             var tbl = new TableView({
-                dataCollection: collection,
-                headerNames: ['name', 'address1'],
-                attrMap: ['name', 'address1']
+                dataCollection: this.collection,
+                headerNames: ['code', 'name', 'address1', 'state/provice', 'zip'],
+                attrMap: ['code', 'name', 'address1', 'stateOrProvince', 'postalCode']
             });
-            self.$el.append(tbl.$el);
-            tbl.render();
-            collection.fetch();
-            collection2.fetch();
+            this.$el.append(tbl.render().$el);
             return this;
+        },
+
+        _addEntity: function() {
+            modalView.render('<p>test</p>');
+        },
+
+        _fetchCollection: function() {
+            this.collection.fetch();
+        },
+
+        _resetCollection: function() {
+            this.collection.reset();
         }
     });
     return {
